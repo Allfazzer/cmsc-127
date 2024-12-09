@@ -55,16 +55,16 @@
                     <h1 class="title_page h1 fw-bold">Manage Courses</h1>
                     <div class="btn-func">
                         <button class="btn btn-custom btn-add">Add Course</button>
-                        <button class="btn btn-custom btn-update">Update Course</button>
-                        <button class="btn btn-custom btn-delete">Delete Course</button>
+                        <!-- Toggle Edit Mode -->
+                        <?php $isEditMode = isset($_GET['edit']) && $_GET['edit'] === 'true'; ?>
+                        <a href="?edit=<?php echo $isEditMode ? 'false' : 'true'; ?>" class="btn btn-custom btn-update">
+                            <?php echo $isEditMode ? 'Finish Editing' : 'Edit'; ?>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Major Courses -->
                 <section class="mb-5">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-
-                    </div>
                     <h4 class="section-title">Major Courses</h4>
                     <table class="table table-hover">
                         <thead class="table-header">
@@ -75,12 +75,16 @@
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
+                                <!-- Conditionally show "Actions" column -->
+                                <?php if ($isEditMode): ?>
+                                    <td>Actions</td>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $courseType = 'Major';  
-                                include './fetch_courses.php';
+                            $courseType = 'Major';
+                            include './fetch_courses.php';
                             ?>
                         </tbody>
                     </table>
@@ -98,16 +102,22 @@
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
+                                <!-- Conditionally show "Actions" column -->
+                                <?php if ($isEditMode): ?>
+                                    <td>Actions</td>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $courseType = 'Qualified Elective';  
-                                include './fetch_courses.php';
+                            $isEditMode;
+                            $courseType = 'Qualified Elective';
+                            include './fetch_courses.php';
                             ?>
                         </tbody>
                     </table>
                 </section>
+
                 <!-- Foundation Courses -->
                 <section>
                     <h4 class="section-title">Foundation Courses (15 Units)</h4>
@@ -120,12 +130,17 @@
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
+                                <!-- Conditionally show "Actions" column -->
+                                <?php if ($isEditMode): ?>
+                                    <td>Actions</td>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $courseType = 'Foundation';  
-                                include './fetch_courses.php';
+                            $isEditMode;
+                            $courseType = 'Foundation';
+                            include './fetch_courses.php';
                             ?>
                         </tbody>
                     </table>
@@ -143,12 +158,17 @@
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
+                                <!-- Conditionally show "Actions" column -->
+                                <?php if ($isEditMode): ?>
+                                    <td>Actions</td>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $courseType = 'GE Requirement';  
-                                include './fetch_courses.php';
+                            $isEditMode;
+                            $courseType = 'GE Requirement';
+                            include './fetch_courses.php';
                             ?>
                         </tbody>
                     </table>
@@ -166,12 +186,17 @@
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
+                                <!-- Conditionally show "Actions" column -->
+                                <?php if ($isEditMode): ?>
+                                    <td>Actions</td>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $courseType = 'Other';  
-                                include './fetch_courses.php';
+                            $isEditMode;
+                            $courseType = 'Other';
+                            include './fetch_courses.php';
                             ?>
                         </tbody>
                     </table>

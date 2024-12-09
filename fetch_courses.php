@@ -39,14 +39,14 @@ if ($result->num_rows > 0) {
             <td>{$row['Units']}</td>
             <td>{$row['College']}</td>
             <td>";
-        
+
         // Fetch prerequisites from CoursePrerequisite table
         $prerequisite_sql = 'SELECT Prerequisite FROM CoursePrerequisite WHERE CourseID = ?';
         $prerequisite_stmt = $conn->prepare($prerequisite_sql);
         $prerequisite_stmt->bind_param('s', $row['CourseID']); // Bind the CourseID to the query
         $prerequisite_stmt->execute();
         $prerequisite_result = $prerequisite_stmt->get_result();
-        
+
         if ($prerequisite_result->num_rows > 0) {
             $prerequisites = []; // Array to hold prerequisites
             while ($prerequisite_row = $prerequisite_result->fetch_assoc()) {
@@ -57,14 +57,23 @@ if ($result->num_rows > 0) {
         } else {
             echo "No Prerequisite";
         }
-        
+
         echo "</td>
-              <td>{$row['Corequisite']}</td>
-        </tr>";
+              <td>{$row['Corequisite']}</td>";  // Added semicolon here to fix the error
+
+        // Check if we are in edit mode and display the buttons
+        if ($isEditMode == true) {
+            echo "
+            <td>
+                <button class='btn btn-sm btn-warning btn-edit' data-id='{$row['CourseID']}'>Edit</button>
+                <button class='btn btn-sm btn-danger btn-delete' data-id='{$row['CourseID']}'>Delete</button>
+            </td>";
+        }
+
+        echo "</tr>";
     }
 } else {
     echo "<tr><td colspan='8'>No $courseType courses available</td></tr>";
 }
 
 $conn->close();
-?>
