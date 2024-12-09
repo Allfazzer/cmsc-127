@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advising Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Advising_Dashboard.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-none d-md-block sidebar py-4">
+                <div class="logo mb-4">
+                    <img src="svg/Logo.svg" alt="Logo">
+                </div>
+
+                <ul class="nav flex-column px-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Advising_Dashboard.html">
+                            <img src="svg/Sidebar_Dashboard.svg" alt="Dashboard"> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Student_Records.html">
+                            <img src="svg/Sidebar_StudentRecords.svg" alt="Student Records"> Student Records
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Advising_Records.html">
+                            <img src="svg/Sidebar_AdvisingRecords.svg" alt="Advising Records"> Advising Records
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Manage_Courses.html">
+                            <img src="svg/Sidebar_.ManageCourses.svg" alt="Manage Courses"> Manage Courses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Logout.html">
+                            <img src="svg/Sidebar_Logout.svg" alt="Logout"> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="container-content col-md-10 ms-sm-auto">
+                <h1 class="title_page h1 fw-bold">Dashboard</h1>
+
+                <!-- Summary Section -->
+                <div class="summary-container row g-3 mb-4">
+                    <!-- Card: For Advising -->
+                    <div class="col-md-4">
+                        <div class="card card-summary p-3 shadow-sm">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p>For Advising</p>
+                                    <h3 class="fw-bold">18</h3>
+                                </div>
+                                <img src="svg/Icon_ForAdvising.svg" alt="For Advising" class="card-logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Accomplished -->
+                    <div class="col-md-4">
+                        <div class="card card-summary p-3 shadow-sm">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p>Accomplished</p>
+                                    <h3 class="fw-bold">30</h3>
+                                </div>
+                                <img src="svg/Icon_Accomplished.svg" alt="Accomplished" class="card-logo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Total Students -->
+                    <div class="col-md-4">
+                        <div class="card card-summary p-3 shadow-sm">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p>Total Students</p>
+                                    <h3 class="fw-bold">21</h3>
+                                </div>
+                                <img src="svg/Icon_TotalStudents.svg" alt="Total Students" class="card-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="row search-container mb-4">
+                    <div class="col-8 p-0">
+                        <div class="input-group search-box">
+                            <input type="search" class="form-control" placeholder="Search for student...">
+                        </div>
+                    </div>
+
+                    <!-- Filter -->
+                    <div class="col-3 p-0">
+                        <div class="dropdown p-0">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="svg/Filter.svg" alt="Filter"> Filter
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                                <li><a class="dropdown-item" href="#">Name</a></li>
+                                <li><a class="dropdown-item" href="#">Student Number</a></li>
+                                <li><a class="dropdown-item" href="#">Last Update</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Table -->
+                <div class="card-table card shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Student Number</th>
+                                        <th>Standing</th>
+                                        <th colspan="2">Last Update of Checklist</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Cruz, Juan Miguel P.</td>
+                                        <td>2022-13604</td>
+                                        <td>1st</td>
+                                        <td>November 23, 2024</td>
+                                        <td>9:03:54 PM</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-custom" onclick="ViewChecklist()">View
+                                                Checklist</button>
+                                            <button class="btn"><img src="svg/Icon_Delete.svg" alt="Delete"></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Cruz, Juan Miguel P.</td>
+                                        <td>2022-13604</td>
+                                        <td>1st</td>
+                                        <td>November 23, 2024</td>
+                                        <td>9:03:54 PM</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-custom" onclick="ViewChecklist()">View
+                                                Checklist</button>
+                                            <button class="btn"><img src="svg/Icon_Delete.svg" alt="Delete"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function ViewChecklist() {
+            window.location.href = 'Adviser_ViewChecklist.html';
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

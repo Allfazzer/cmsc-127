@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Course List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Advising_ViewStudentCourseList.css">
+</head>
+
+<body>
+    <!-- Centered Container -->
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <main class="container-content">
+            <!-- Title Section -->
+            <div class="student-advising-title text-center">
+                <p id="student_name">Dela Cruz, Miguel</p>
+                <h1 class="fw-bold">For Advising</h1>
+                <p id="sem_ay">1ST SEMESTER, A.Y 2023-2024</p>
+            </div>
+
+            <!-- Main Content Row -->
+            <div class="row">
+
+                <!-- Left Column: Checklist -->
+                <div class="col-7">
+                    <div class="card shadow-sm card-checklist">
+                        <div class="card-body">
+                            <h1 class="mb-0">Student Course Checklist</h1>
+                            <p>I - BS COMPUTER SCIENCE</p>
+
+                            <!-- Dropdown Filter -->
+                            <div class="dropdown p-0">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="svg/Filter.svg" alt="Filter Icon"> Filter by Year or Course Type
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                                    <li><a class="dropdown-item" href="#">1st Year</a></li>
+                                    <li><a class="dropdown-item" href="#">2nd Year</a></li>
+                                    <li><a class="dropdown-item" href="#">3rd Year</a></li>
+                                    <li><a class="dropdown-item" href="#">4th Year</a></li>
+                                    <li><a class="dropdown-item" href="#">GE Requirements</a></li>
+                                    <li><a class="dropdown-item" href="#">Other Required Courses</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Checklist Table -->
+                            <div class="checklist-table table-responsive mt-4">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="7" class="text-start sem-label">1ST SEMESTER, 1ST YEAR</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Course</th>
+                                            <th scope="col">Course Type</th>
+                                            <th scope="col">Units</th>
+                                            <th scope="col">Grade</th>
+                                            <th scope="col">Standing</th>
+                                            <th scope="col">Semester Taken</th>
+                                            <th scope="col">A.Y Taken</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>MATH 53</td>
+                                            <td>FOUNDATION</td>
+                                            <td>5</td>
+                                            <td>1.00</td>
+                                            <td>1st Year</td>
+                                            <td>1st Semester</td>
+                                            <td>2022-2023</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MATH 53</td>
+                                            <td>FOUNDATION</td>
+                                            <td>5</td>
+                                            <td>1.00</td>
+                                            <td>1st Year</td>
+                                            <td>1st Semester</td>
+                                            <td>2022-2023</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-end">TOTAL UNITS: 14</p>
+                                <div class="update-btn-container text-start">
+                                    <button class="btn btn-primary flex-grow-1">Save Course Checkist</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Advising -->
+                <div class="col-5">
+                    <div class="card shadow-sm card-list">
+                        <div class="card-body">
+                            <h1 class="mb-0">Course List for Advising</h1>
+                            <p class="submission-label">Submitted: November 23, 2024</p>
+
+                            <!-- Advising Table -->
+                            <div class="checklist-table table-responsive mt-4">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Course</th>
+                                            <th scope="col">Course Type</th>
+                                            <th scope="col">Units</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>MATH 53</td>
+                                            <td>FOUNDATION</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MATH 53</td>
+                                            <td>FOUNDATION</td>
+                                            <td>5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-end">TOTAL UNITS: 14</p>
+                            </div>
+
+                            <!-- Remarks Section -->
+                            <div class="advising-remarks mb-3">
+                                <h2>Advising Remarks</h2>
+                                <textarea class="form-control txt-size" id="advising-remarks"
+                                    placeholder="Enter Advising Notes/Remarks here..."></textarea>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="advising-buttons d-flex gap-2">
+                                <button class="btn btn-outline-secondary flex-grow-1">Navigate Back</button>
+                                <!-- On click approved: update checklist then save -->
+                                <button class="btn btn-primary flex-grow-1">Approve Course List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

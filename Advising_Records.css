@@ -1,0 +1,8 @@
+th,
+td {
+	padding: 10px;
+}
+
+.status .btn-custom {
+	background-color: #979797 !important;
+}
