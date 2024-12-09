@@ -71,17 +71,17 @@
                             <tr>
                                 <td>Course Name</td>
                                 <td>Description</td>
-                                <td>Component</td>
                                 <td>Units</td>
-                                <td>Course Type</td>
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                            </tr>
+                            <?php
+                                $courseType = 'Major';  
+                                include './fetch_courses.php';
+                            ?>
                         </tbody>
                     </table>
                 </section>
@@ -94,17 +94,17 @@
                             <tr>
                                 <td>Course Name</td>
                                 <td>Description</td>
-                                <td>Component</td>
                                 <td>Units</td>
-                                <td>Course Type</td>
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                            </tr>
+                            <?php
+                                $courseType = 'Qualified Elective';  
+                                include './fetch_courses.php';
+                            ?>
                         </tbody>
                     </table>
                 </section>
@@ -116,17 +116,17 @@
                             <tr>
                                 <td>Course Name</td>
                                 <td>Description</td>
-                                <td>Component</td>
                                 <td>Units</td>
-                                <td>Course Type</td>
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                            </tr>
+                            <?php
+                                $courseType = 'Foundation';  
+                                include './fetch_courses.php';
+                            ?>
                         </tbody>
                     </table>
                 </section>
@@ -139,17 +139,17 @@
                             <tr>
                                 <td>Course Name</td>
                                 <td>Description</td>
-                                <td>Component</td>
                                 <td>Units</td>
-                                <td>Course Type</td>
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                            </tr>
+                            <?php
+                                $courseType = 'GE Requirement';  
+                                include './fetch_courses.php';
+                            ?>
                         </tbody>
                     </table>
                 </section>
@@ -162,17 +162,17 @@
                             <tr>
                                 <td>Course Name</td>
                                 <td>Description</td>
-                                <td>Component</td>
                                 <td>Units</td>
-                                <td>Course Type</td>
                                 <td>Affiliation</td>
                                 <td>Prerequisite</td>
                                 <td>Corequisite</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="text-center">
-                            </tr>
+                            <?php
+                                $courseType = 'Other';  
+                                include './fetch_courses.php';
+                            ?>
                         </tbody>
                     </table>
                 </section>
